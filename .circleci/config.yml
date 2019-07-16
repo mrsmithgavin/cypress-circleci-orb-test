@@ -1,0 +1,15 @@
+version: 2.1
+orbs:
+  cypress: cypress-io/cypress@1.8.0
+jobs:
+  test_and_build:
+    docker:
+      - image: circleci/node:10.2.1
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run: 
+          name: Build
+          command: npm run build
