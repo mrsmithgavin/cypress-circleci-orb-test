@@ -19,5 +19,6 @@ workflows:
     jobs:
       - buildIt
       - cypress/run:
+        working_directory: e2e
           requires:
             - buildIt
