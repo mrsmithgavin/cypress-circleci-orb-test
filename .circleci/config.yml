@@ -13,8 +13,14 @@ jobs:
       - run: 
           name: Build
           command: npm run build
+  testIt:
+     - cypress/run
 
 workflows:
-  build_app:
+  version: 1
+  build_and_test:
     jobs:
       - buildIt
+      - testIt:
+          requires:
+            buildIt
