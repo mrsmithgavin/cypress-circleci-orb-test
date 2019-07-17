@@ -2,7 +2,7 @@ version: 2.1
 orbs:
   cypress: cypress-io/cypress@1.8.0
 jobs:
-  build:
+  buildIt:
     docker:
       - image: circleci/node:10.2.1
     steps:
@@ -17,4 +17,4 @@ jobs:
 workflows:
   build_app:
     jobs:
-      - build
+      - buildIt
