@@ -10,15 +10,21 @@ jobs:
       - run:
           name: Install dependencies
           command: npm install
-      - run: 
+      - run:
           name: Build
           command: npm run build
+  testIt:
+    - run:
+      name: Run Cypress tests
+      command: npx cypress run --reporter cypress-multi-reporters --reporter-options configFile=config.json
+      working_directory: e2e
 
 workflows:
   build_and_test:
     jobs:
       - buildIt
-      - cypress/run:
-          requires:
-            - buildIt
-          working_directory: e2e
+      - testIt
+      # - cypress/run:
+      #     requires:
+      #       - buildIt
+      #     working_directory: e2e
