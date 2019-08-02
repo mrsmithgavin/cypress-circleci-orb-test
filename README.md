@@ -17,3 +17,9 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+
+## Known issues:
+
+- https://github.com/cypress-io/cypress/issues/1305#issuecomment-425199598
